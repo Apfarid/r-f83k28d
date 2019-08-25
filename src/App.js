@@ -2,11 +2,24 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  state= {
+    numero : 0
+  }
+  
+  sumar(){
+    this.setState({
+      numero : this.state.numero + 1
+    })
+  }
+
+
+
+
   render() {
     return (
       <div>
-        <span className="value">0</span>
-        <button id="inc">Incrementa</button>
+        <span className="value">{this.state.numero}</span>
+        <button id="inc" onClick={this.sumar.bind(this)} >Incrementa</button>
       </div>
     );
   }
